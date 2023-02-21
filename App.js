@@ -49,7 +49,8 @@ export default function App() {
                     die :
                     generateNewDie()
             }))
-            setRolls(rolls + 1)
+            if(!dice.every(die => die.isHeld)) 
+                setRolls(rolls + 1)
         } else {
             setRolls(0)
             setTenzies(false)

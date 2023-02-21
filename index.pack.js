@@ -478,7 +478,9 @@ function App() {
                     return die.isHeld ? die : generateNewDie();
                 });
             });
-            setRolls(rolls + 1);
+            if (!dice.every(function (die) {
+                return die.isHeld;
+            })) setRolls(rolls + 1);
         } else {
             setRolls(0);
             setTenzies(false);
